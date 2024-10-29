@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem 2rem;
+  border-radius: 8%;
+}
+
+.menu-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.menu-btn {
+  background: #24282f;
+  border: 1px solid #3e444f;
+}
+
+.menu-btn:hover {
+  background: #3d4149;;
+}
