@@ -1,1 +1,5 @@
-<p>login works!</p>
+<div class="loginContainer">
+    <input type="text" pInputText [(ngModel)]="login" />
+    <p-password [(ngModel)]="password" />
+    <p-button label="Submit" (onClick)="handleLogin()"/>
+</div>
