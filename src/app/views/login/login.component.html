@@ -1,5 +1,15 @@
 <div class="loginContainer">
-    <input type="text" pInputText [(ngModel)]="login" />
-    <p-password [(ngModel)]="password" />
-    <p-button label="Submit" (onClick)="handleLogin()"/>
+    <div class = "usernameTextFieldContainer">
+        <p-floatLabel>
+            <input type="text" pInputText [(ngModel)]="login" />
+            <label for="userbane">Username or email</label>
+        </p-floatLabel>
+    </div>
+    <div class="passwordTextFieldContainer">
+        <p-floatLabel>
+            <p-password class="passwordTextField" [(ngModel)]="password"[toggleMask]="true" [inputStyle]="{'width': '100%'}" [style]="{'width': '100%'}"  />
+            <label for="password">Password</label>
+        </p-floatLabel>
+    </div>
+        <p-button label="Submit" (onClick)="handleLogin()"/>
 </div>
