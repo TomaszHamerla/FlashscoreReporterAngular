@@ -3,11 +3,13 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
+import { FloatLabelModule } from 'primeng/floatlabel';
+
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [InputTextModule, FormsModule, PasswordModule, ButtonModule],
+  imports: [InputTextModule, FormsModule, PasswordModule, ButtonModule, FloatLabelModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })

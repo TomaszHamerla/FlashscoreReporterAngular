@@ -1,1 +1,18 @@
-<p>register works!</p>
+<div class="container">
+    <div class="registrationContainer">
+        <div class = "usernameTextFieldContainer">
+            <p-floatLabel>
+                <input type="text" pInputText [(ngModel)]="login" />
+                <label for="username">Nazwa użytkownika</label>
+            </p-floatLabel>
+        </div>
+        <div class="passwordTextFieldContainer">
+            <p-floatLabel>
+                <p-password class="passwordTextField" [(ngModel)]="password"[toggleMask]="true" [inputStyle]="{'width': '100%'}" [style]="{'width': '100%'}"  />
+                <label for="password">Hasło</label>
+            </p-floatLabel>
+        </div>
+            <p-button label="Zarejestruj" (onClick)="handleRegistration()"/>
+            <p style="color: lightgrey; margin-top: 24px; font-size: 13px;">Masz już konto? <a href="/login">Zaloguj się.</a></p> 
+    </div>
+</div>

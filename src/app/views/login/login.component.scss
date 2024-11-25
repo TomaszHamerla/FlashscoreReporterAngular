@@ -1,7 +1,40 @@
 .loginContainer
 {
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    height: 500px;
-    width: 500px;
-    
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center; 
+    max-width: fit-content;
+    margin: auto;
+    padding: 36px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35);
+}
+
+.container
+{
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.loginContainer input[type="text"]
+{
+    width: 100%;
+    padding: 8px;
+    height: 48px;
+    margin-bottom: 2px;
+    box-sizing: border-box;
+}
+
+.usernameTextFieldContainer
+{
+    margin-bottom: 24px;
+    width: 100%;
+}
+.passwordTextFieldContainer
+{
+    margin-bottom: 24px;
+    width: 100%;
 }
