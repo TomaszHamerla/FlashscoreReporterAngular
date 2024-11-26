@@ -1,14 +1,13 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {RegisterForm} from "../models/register-form";
 import {environment} from "../../../environments/environment.development";
+import {LoginForm} from "../models/login-form";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  apiUrl = environment.apiUrl;
 
   constructor(
     private http: HttpClient
@@ -16,6 +15,11 @@ export class AuthService {
   }
 
   register(registerForm: RegisterForm) {
-    return this.http.post(`${this.apiUrl}/api/Auth/register`, registerForm);
+
+    return this.http.post(`${environment.apiUrl}/Auth/Register`, registerForm);
+  }
+
+  login(loginForm: LoginForm) {
+    return this.http.post(`${environment.apiUrl}/Auth/Login`, loginForm);
   }
 }
