@@ -1,0 +1,35 @@
+.teamLogo
+{
+  height: 35px;
+  width: 35px;
+
+}
+.homeLogo
+{
+    height: 35px;
+    width: 35px;
+}
+.teamName
+{
+  justify-content: center;
+}
+.p-paginator {
+  margin-top: 1rem;
+  justify-content: center;
+}
+.container
+{
+  margin: auto;
+  display: flex;
+justify-content: center;
+  margin-top: 20px;
+}
+
+.textWithLogo {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.teamLogo {
+  margin-right: 0.5rem;
+}
