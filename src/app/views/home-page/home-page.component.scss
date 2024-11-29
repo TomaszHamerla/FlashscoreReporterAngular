@@ -1,0 +1,48 @@
+h2, h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h3 {
+  font-weight: 800;
+  font-size: x-large;
+  margin: 2rem 1rem 0.5rem;
+  color: lightgrey;
+}
+
+.line {
+  border-bottom: solid #87810a;
+}
+
+::ng-deep.p-card {
+  background: #27262d8c;
+  color: lightgrey;
+  max-height: 240px;
+  padding: 0;
+}
+
+
+.container {
+  display: flex;
+  margin-top: 4rem;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.custom-logo {
+  height: 95px;
+  width: 95px;
+}
+
+.img-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.game-info {
+  display: flex;
+  justify-content: center;
+  font-weight: 800;
+}

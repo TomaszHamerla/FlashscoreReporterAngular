@@ -33,7 +33,7 @@ export class SoccerComponent implements OnInit {
 
   ngOnInit(): void {
     this.toastService.show();
-    this.gameService.getGames().pipe(delay(800)).subscribe({
+    this.gameService.getGames().pipe(delay(3000)).subscribe({
       next: (val) => {
         this.gamesData = val;
         console.log(val);
