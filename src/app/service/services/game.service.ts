@@ -15,4 +15,9 @@ export class GameService {
   getGames() {
     return this.http.get<GameWithDetailsDto[]>(`${environment.apiUrl}/games`)
   }
+
+  getGameById(gameId: number){
+    return this.http.get<GameWithDetailsDto>(`${environment.apiUrl}/games/${gameId}`)
+  }
+
 }

@@ -1,31 +1,30 @@
-<div class="container">
+<div *ngIf="!toastService.isVisible()" class="container">
 
   <p-table
-  [columns]="cols"
   [value]="gamesData" [tableStyle]="{ 'min-width': '80rem' }"
   [paginator]="true"
-  [rows]="10"
-  [rowsPerPageOptions]="[10, 50, 100]"
-
+  [rows]="5"
+  [rowsPerPageOptions]="[5, 10]"
   >
-    <ng-template pTemplate="header" let-columns>
-      <tr>
-        <th *ngFor="let col of columns">
-          {{ col.header }}
-        </th>
-      </tr>
-    </ng-template>
 
-    <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <ng-template pTemplate="header">
+    <tr>
+      <th>Gość</th>
+      <th></th>
+      <th>Wynik</th>
+      <th></th>
+      <th>Gospodarz</th>
+    </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
       <tr>
-        <td *ngFor="let col of columns">
-          <img *ngIf="col.field === 'awayTeamLogo'" [src]="rowData[col.field]" alt="Away Logo" class="teamLogo" />
-          <img *ngIf="col.field === 'homeTeamLogo'" [src]="rowData[col.field]" alt="Home Logo" class="homeLogo" />
-          <span *ngIf="col.field !== 'awayTeamLogo' && col.field !== 'homeTeamLogo'">
-            {{ rowData[col.field] }}
-          </span>
-        </td>
+        <td>{{ product.awayTeamName}}</td>
+        <td><img class="teamLogo" [src]="product.awayTeamLogo" alt="Away Logo"></td>
+        <td class="custom-center">{{ product.gameResult }}</td>
+        <td><img class="teamLogo" [src]="product.homeTeamLogo" alt="Away Logo"></td>
+        <td>{{ product.homeTeamName }}</td>
       </tr>
+
     </ng-template>
   </p-table>
 </div>
