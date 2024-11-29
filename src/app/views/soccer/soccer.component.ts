@@ -16,13 +16,13 @@ import {delay, timeout} from "rxjs";
   styleUrl: './soccer.component.scss',
 })
 export class SoccerComponent implements OnInit {
-  cols = [
-    {field: 'awayTeamName', header: 'Gość'},
-    {field: 'awayTeamLogo'},
-    {field: 'homeTeamLogo'},
-    {field: 'homeTeamName', header: 'Gospodarz'},
-    {field: 'gameResult', header: 'Wynik'},
-  ];
+  // cols = [
+  //   {field: 'awayTeamName', header: 'Gość'},
+  //   {field: 'awayTeamLogo'},
+  //   {field: 'homeTeamLogo'},
+  //   {field: 'homeTeamName', header: 'Gospodarz'},
+  //   {field: 'gameResult', header: 'Wynik'},
+  // ];
   gamesData!: GameWithDetailsDto[];
 
   constructor(
