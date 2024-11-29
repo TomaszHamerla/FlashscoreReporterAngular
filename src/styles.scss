@@ -2,6 +2,18 @@
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 
-body {
+html, body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   background: linear-gradient(135deg, #004d00, #003366);
+  background-size: cover;
+}
+
+.p-progress-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
 }

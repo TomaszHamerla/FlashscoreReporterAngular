@@ -1,12 +1,11 @@
-<div class="container">
+<div *ngIf="!toastService.isVisible()" class="container">
 
   <p-table
   [columns]="cols"
   [value]="gamesData" [tableStyle]="{ 'min-width': '80rem' }"
   [paginator]="true"
-  [rows]="10"
-  [rowsPerPageOptions]="[10, 50, 100]"
-
+  [rows]="5"
+  [rowsPerPageOptions]="[5, 10]"
   >
     <ng-template pTemplate="header" let-columns>
       <tr>
