@@ -22,6 +22,10 @@ h3 {
   padding: 0;
 }
 
+::ng-deep.p-card-body {
+  padding: 0;
+}
+
 
 .container {
   display: flex;
