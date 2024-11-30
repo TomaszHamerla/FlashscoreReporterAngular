@@ -1,28 +1,28 @@
 <div *ngIf="!toastService.isVisible()" class="container">
 
   <p-table
-  [value]="gamesData" [tableStyle]="{ 'min-width': '80rem' }"
-  [paginator]="true"
-  [rows]="5"
-  [rowsPerPageOptions]="[5, 10]"
+    [value]="gamesData" [tableStyle]="{ 'min-width': '80rem' }"
+    [paginator]="true"
+    [rows]="5"
+    [rowsPerPageOptions]="[5, 10]"
   >
 
     <ng-template pTemplate="header">
-    <tr>
-      <th>Gość</th>
-      <th></th>
-      <th>Wynik</th>
-      <th></th>
-      <th>Gospodarz</th>
-    </tr>
+      <tr>
+        <th>Gospodarz</th>
+        <th></th>
+        <th>Wynik</th>
+        <th></th>
+        <th>Gość</th>
+      </tr>
     </ng-template>
     <ng-template pTemplate="body" let-product>
       <tr>
-        <td>{{ product.awayTeamName}}</td>
-        <td><img class="teamLogo" [src]="product.awayTeamLogo" alt="Away Logo"></td>
-        <td class="custom-center">{{ product.gameResult }}</td>
+        <td>{{ product.homeTeamName}}</td>
         <td><img class="teamLogo" [src]="product.homeTeamLogo" alt="Away Logo"></td>
-        <td>{{ product.homeTeamName }}</td>
+        <td class="custom-center">{{ product.gameResult }}</td>
+        <td><img class="teamLogo" [src]="product.awayTeamLogo" alt="Away Logo"></td>
+        <td>{{ product.awayTeamName }}</td>
       </tr>
 
     </ng-template>
