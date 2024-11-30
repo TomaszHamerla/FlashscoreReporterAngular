@@ -1,26 +1,28 @@
-<div class="title">
-<h3>Ostatnia kolejka</h3>
-  <div class="line"></div>
-</div>
-<div class="container">
-  <div *ngFor="let item of gamesData">
-    <p-card class="custom-card" [style]="{ width: '360px' }">
-      <ng-template pTemplate="header">
-        <div class="img-container">
-          <img alt="Card" [src]="item.homeTeamLogo" class="custom-logo"/>
-          <h2>{{item.gameResult}}</h2>
-          <img alt="Card" [src]="item.awayTeamLogo" class="custom-logo"/>
+<div *ngIf="!toastService.isVisible()">
+  <div class="title">
+    <h3>Ostatnia kolejka</h3>
+    <div class="line"></div>
+  </div>
+  <div class="container">
+    <div *ngFor="let item of gamesData">
+      <p-card class="custom-card" [style]="{ width: '360px' }" (click)="getGameDetails(item)">
+        <ng-template pTemplate="header">
+          <div class="img-container">
+            <img alt="Card" [src]="item.homeTeamLogo" class="custom-logo"/>
+            <h2>{{item.gameResult}}</h2>
+            <img alt="Card" [src]="item.awayTeamLogo" class="custom-logo"/>
+          </div>
+        </ng-template>
+        <div class="game-info">
+          <p>
+            {{item.homeTeamName}} VS {{item.awayTeamName}}
+          </p>
         </div>
-      </ng-template>
-      <div class="game-info">
-        <p>
-          {{item.homeTeamName}} VS {{item.awayTeamName}}
-        </p>
-      </div>
-      <ng-template pTemplate="footer">
-        <div class="flex gap-3 mt-1">
-        </div>
-      </ng-template>
-    </p-card>
+        <ng-template pTemplate="footer">
+          <div class="flex gap-3 mt-1">
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
   </div>
 </div>

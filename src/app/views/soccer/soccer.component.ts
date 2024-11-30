@@ -16,13 +16,6 @@ import {delay, timeout} from "rxjs";
   styleUrl: './soccer.component.scss',
 })
 export class SoccerComponent implements OnInit {
-  // cols = [
-  //   {field: 'awayTeamName', header: 'Gość'},
-  //   {field: 'awayTeamLogo'},
-  //   {field: 'homeTeamLogo'},
-  //   {field: 'homeTeamName', header: 'Gospodarz'},
-  //   {field: 'gameResult', header: 'Wynik'},
-  // ];
   gamesData!: GameWithDetailsDto[];
 
   constructor(
@@ -33,10 +26,9 @@ export class SoccerComponent implements OnInit {
 
   ngOnInit(): void {
     this.toastService.show();
-    this.gameService.getGames().pipe(delay(3000)).subscribe({
+    this.gameService.getGames().pipe(delay(700)).subscribe({
       next: (val) => {
         this.gamesData = val;
-        console.log(val);
       },
       error: err => {
         this.toastService.hide();
@@ -45,5 +37,9 @@ export class SoccerComponent implements OnInit {
         this.toastService.hide();
       }
     });
+  }
+
+  getGameDetails(gameId: number) {
+    console.log(gameId);
   }
 }

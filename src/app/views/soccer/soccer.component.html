@@ -5,6 +5,7 @@
     [paginator]="true"
     [rows]="5"
     [rowsPerPageOptions]="[5, 10]"
+    selectionMode="single"
   >
 
     <ng-template pTemplate="header">
@@ -17,7 +18,7 @@
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-product>
-      <tr>
+      <tr (click)="getGameDetails(product.gameId)">
         <td>{{ product.homeTeamName}}</td>
         <td><img class="teamLogo" [src]="product.homeTeamLogo" alt="Away Logo"></td>
         <td class="custom-center">{{ product.gameResult }}</td>
