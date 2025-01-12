@@ -1,0 +1,86 @@
+.game-container {
+  text-align: center;
+}
+
+::ng-deep .p-chip {
+  width: 100%;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 20px;
+}
+
+.img-cursor-pointer {
+  cursor: pointer;
+}
+
+.player-chip {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0.5rem;
+}
+
+.player-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.player-name {
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.team-logo img {
+  width: 100px;
+  height: auto;
+}
+
+.game-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-badge {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.lineups {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.home-team, .away-team {
+  width: 40%;
+}
+
+.events {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.event-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.home-team-color {
+  background-color: orange;
+  color: white;
+}
+
+.away-team-color {
+  background-color: green;
+  color: white;
+}

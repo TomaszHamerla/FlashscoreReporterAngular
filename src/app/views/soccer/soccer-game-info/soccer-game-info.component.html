@@ -1,0 +1,59 @@
+<p-panel [header]="gameData?.homeTeamName + ' vs ' + gameData?.awayTeamName" [ngClass]="'game-container'">
+  <div class="logos">
+    <div (click)="getTeamInfo(gameData?.homeTeamName)" class="img-cursor-pointer" [ngClass]="'team-logo'">
+      <img [src]="gameData?.homeTeamLogo" alt="{{ gameData?.homeTeamName }} logo">
+    </div>
+    <div [ngClass]="'game-result'">
+      <p-badge [value]="gameData?.gameResult" severity="info" [styleClass]="'result-badge'"></p-badge>
+    </div>
+    <div (click)="getTeamInfo(gameData?.awayTeamName)" class="img-cursor-pointer" [ngClass]="'team-logo'">
+      <img [src]="gameData?.awayTeamLogo" alt="{{ gameData?.awayTeamName }} logo">
+    </div>
+  </div>
+
+  <div class="lineups">
+    <p-card header="{{ gameData?.homeTeamName }}" class="home-team">
+      <div class="player-list">
+        <div *ngFor="let player of gameData?.homeTeamLineup" class="player-item">
+          <p-chip class="player-chip">
+            <div class="player-info">
+              <span (click)="getPlayerInfo(player.id)" class="player-name">{{ player.name }}</span>
+              <span class="player-position">({{ player.position }})</span>
+            </div>
+          </p-chip>
+        </div>
+      </div>
+    </p-card>
+
+    <p-card header="{{ gameData?.awayTeamName }}" class="away-team">
+      <div class="player-list">
+        <div *ngFor="let player of gameData?.awayTeamLineup" class="player-item">
+          <p-chip class="player-chip">
+            <div class="player-info">
+              <span (click)="getPlayerInfo(player.id)" class="player-name">{{ player.name }}</span>
+              <span class="player-position">({{ player.position }})</span>
+            </div>
+          </p-chip>
+        </div>
+      </div>
+    </p-card>
+  </div>
+
+
+  <p-accordion class="events">
+    <p-accordionTab header="Przebieg meczu">
+      <div *ngFor="let event of gameData?.events" class="event-item">
+        <p-tag
+          [value]="event.teamName"
+          [severity]="event.teamName === gameData?.homeTeamName ? 'warning' : 'success'"
+          [ngClass]="{
+          'home-team-color': event.teamName === gameData?.homeTeamName,
+          'away-team-color': event.teamName === gameData?.awayTeamName
+        }">
+        </p-tag>
+        {{ event.details }} by <strong>{{ event.playerName }}</strong>
+      </div>
+    </p-accordionTab>
+  </p-accordion>
+
+</p-panel>
