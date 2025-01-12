@@ -6,6 +6,7 @@ import {TableModule, TablePageEvent} from 'primeng/table';
 import {ToastComponent} from "../utils/toast/toast.component";
 import {ToastService} from "../../service/utils/toast.service";
 import {delay, timeout} from "rxjs";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -20,7 +21,8 @@ export class SoccerComponent implements OnInit {
 
   constructor(
     private gameService: GameService,
-    protected toastService: ToastService
+    protected toastService: ToastService,
+    private router: Router
   ) {
   }
 
@@ -40,6 +42,6 @@ export class SoccerComponent implements OnInit {
   }
 
   getGameDetails(gameId: number) {
-    console.log(gameId);
+    this.router.navigate(['/game', gameId]);
   }
 }
